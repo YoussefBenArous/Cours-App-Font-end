@@ -1,10 +1,10 @@
+import 'package:cours_app/Screens/Home_Screen.dart';
 import 'package:cours_app/home/login_screen.dart';
 import 'package:cours_app/wedget/costom_text.dart';
 import 'package:cours_app/wedget/custom_Tiltle.dart';
 import 'package:cours_app/wedget/custom_input_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:cours_app/home/phone_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -33,7 +33,10 @@ class _SignupScreenState extends State<SignupScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CustomTitre(text: 'Sign Up'),
+                  CustomTitre(
+                    text: 'Sign Up',
+                    color: Color(0xff1F1F39),
+                  ),
                   CustomTitle(title: 'Enter your details below & free sign up'),
                 ],
               ),
@@ -57,7 +60,8 @@ class _SignupScreenState extends State<SignupScreen> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
-                        }                        if (!value.contains('@')) {
+                        }
+                        if (!value.contains('@')) {
                           return 'Please enter a valid email';
                         }
                         return null;
@@ -94,8 +98,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                         icon: Icon(
                           _obscureText
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
+                              ? Icons.visibility_off_outlined
+                              : Icons.visibility_outlined,
                         ),
                       ),
                     ),
@@ -110,7 +114,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const PhoneScreen(),
+                                      builder: (context) => const HomeScreen(),
                                     ),
                                   );
                                 }

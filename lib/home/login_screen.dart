@@ -1,3 +1,4 @@
+import 'package:cours_app/Screens/Home_Screen.dart';
 import 'package:cours_app/home/SignUp_screen.dart';
 import 'package:cours_app/wedget/custom_Tiltle.dart';
 import 'package:flutter/gestures.dart';
@@ -24,11 +25,15 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-                height: MediaQuery.of(context).size.height * 0.2,
-                color: const Color(0xFFF5F5F5),
-                alignment: Alignment.bottomLeft,
-                padding: const EdgeInsets.all(20.0),
-                child: const CustomTitre(text: 'Log In')),
+              height: MediaQuery.of(context).size.height * 0.2,
+              color: const Color(0xFFF5F5F5),
+              alignment: Alignment.bottomLeft,
+              padding: const EdgeInsets.all(20.0),
+              child: const CustomTitre(
+                text: 'Log In',
+                color: Color(0xff1F1F39),
+              ),
+            ),
             Container(
               color: Colors.white,
               padding: const EdgeInsets.all(20.0),
@@ -71,8 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           icon: Icon(
                             _obscureText
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined,
+                                ? Icons.visibility_off_outlined
+                                : Icons.visibility_outlined,
                           )),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -103,7 +108,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {}
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomeScreen(),
+                              ),
+                            );
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF3D5CFF),

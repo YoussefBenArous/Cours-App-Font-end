@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomTitre extends StatelessWidget {
   final String text;
-  const CustomTitre({super.key, required this.text});
+  final Color color;
+
+  const CustomTitre({super.key, required this.text, required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
+      style:  TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
-        color: Color(0xff1f1f39),
+        color: color,
       ),
     );
   }

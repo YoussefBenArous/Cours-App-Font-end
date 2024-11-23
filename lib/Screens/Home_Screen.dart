@@ -1,4 +1,6 @@
+import 'package:cours_app/wedget/custom_Tiltle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,7 +12,6 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Greeting Section
             Container(
               padding: const EdgeInsets.all(16.0),
               color: const Color(0xff3D5CFF),
@@ -18,20 +19,24 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text(
-                    'Hi, Kristin',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomTitre(
+                        text: 'Hi, User',
+                        color: Colors.white,
+                      ),
+                      Image.asset(
+                        'assets/image/appbar.png',
+                        height: 80,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    'Let’s start learning',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    "Let’s start learning",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -41,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -152,7 +158,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8),
-                  LearningPlanItem(title: "Packaging Design", progress: "40/48"),
+                  LearningPlanItem(
+                      title: "Packaging Design", progress: "40/48"),
                   LearningPlanItem(title: "Product Design", progress: "6/24"),
                 ],
               ),
@@ -226,12 +233,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
 class LearningPlanItem extends StatelessWidget {
   final String title;
   final String progress;
 
-  const LearningPlanItem({required this.title, required this.progress, super.key});
+  const LearningPlanItem(
+      {required this.title, required this.progress, super.key});
 
   @override
   Widget build(BuildContext context) {

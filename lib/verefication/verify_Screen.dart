@@ -1,3 +1,4 @@
+import 'package:cours_app/Screens/Home_Screen.dart';
 import 'package:cours_app/home/phone_screen.dart';
 import 'package:cours_app/verefication/sucess_Screen.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const PhoneScreen(),
+                builder: (context) => PhoneScreen(),
               ),
             );
           },
