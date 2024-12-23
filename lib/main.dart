@@ -1,4 +1,5 @@
 import 'package:cours_app/Screens/Home_Screen.dart';
+import 'package:cours_app/Screens/account.dart';
 import 'package:cours_app/home/FirstPage.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Cours App',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: Account(),
     );
   }
 }
